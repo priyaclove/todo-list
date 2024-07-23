@@ -1,0 +1,376 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --text-color: #333;
+  --bg-color: #f4f4f4;
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 75px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--secondary-color);
+  color: white;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.sidebar-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+}
+
+.sidebar nav ul li {
+  font-size: 24px;
+  padding: 30px 30px;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar nav ul li a i {
+  margin-right: 20px;
+  width: 20px;
+}
+
+.userList {
+  padding-top: -70px;
+  padding-bottom: -70px;
+  margin-top: -70px;
+  margin-bottom: -50px;
+}
+
+.projectList {
+  padding-top: -200px;
+  padding-bottom: -70px;
+  margin-top: -70px;
+  margin-bottom: -50px;
+}
+
+.sidebar.collapsed .logo,
+.sidebar.collapsed nav ul li a span {
+  display: none;
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-top: 17px;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.top-bar {
+  background-color: #f4f4f4;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.top-bar nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.top-bar nav ul li {
+  margin-right: 80px;
+}
+
+.top-bar nav ul li a {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar nav ul li a i {
+  margin-right: 5px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.content {
+  padding: 30px;
+}
+
+.last {
+  margin-right: 100px;
+}
+.task_heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 100px;
+  gap: 20px; /* Adjust the space between headings as needed */
+  margin-bottom: 10px;
+}
+
+.task_heading h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Stats Styles */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+#container1,
+#container2,
+#container3,
+#container4 {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  color: white;
+}
+
+#container1 {
+  margin: 10px;
+  padding: 10px;
+}
+.task {
+  margin: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #080808;
+  cursor: move;
+  background: linear-gradient(40deg, #ffcccb, #ffd1dc);
+}
+
+.stat-card1 {
+  background: linear-gradient(45deg, #ffcccb, #ffd1dc);
+  color: #333;
+}
+
+.stat-card2 {
+  background: linear-gradient(45deg, #e0f7fa, #b3e5fc);
+  color: #333;
+}
+
+.stat-card3 {
+  background: linear-gradient(45deg, #e8f5e9, #dcedc8);
+  color: #333;
+}
+
+.stat-card4 {
+  background: linear-gradient(45deg, #fff3e0, #ffecb3);
+  color: #333;
+}
+
+/* Tasks Styles */
+.tasks h2 {
+  margin-bottom: 20px;
+}
+
+.task-list {
+  list-style-type: none;
+}
+
+.task-list li {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.task-status.pending {
+  background-color: #f1c40f;
+  color: #34495e;
+}
+
+.task-status.in-progress {
+  background-color: #3498db;
+  color: white;
+}
+
+.task-status.completed {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.task-status.in-review {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: rgb(8, 190, 222);
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  max-width: 500px;
+}
+
+.close {
+  color: #020305;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+select {
+  background-color: white;
+  color: #020305;
+  border: 1px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 460px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #2980b9;
+}
+
+.container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+  margin: 0 10px; /* Adjust margin as needed */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
